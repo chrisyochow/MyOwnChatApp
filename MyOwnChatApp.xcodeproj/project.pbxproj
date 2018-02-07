@@ -48,6 +48,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BE057E64202B489D007F5D7D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BE057E65202B48A9007F5D7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BE057E66202B48AE007F5D7D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE057E67202B48BD007F5D7D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		BE05DC05202B45B400BC13A5 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +107,10 @@
 		BE20A7AF202B106F0032B2D6 /* MyOwnChatApp */ = {
 			isa = PBXGroup;
 			children = (
+				BE057E66202B48AE007F5D7D /* Model */,
+				BE057E65202B48A9007F5D7D /* View */,
+				BE057E64202B489D007F5D7D /* Controller */,
+				BE057E67202B48BD007F5D7D /* Utility */,
 				BE20A7B0202B106F0032B2D6 /* AppDelegate.swift */,
 				BE20A7B2202B106F0032B2D6 /* ViewController.swift */,
 				BE20A7B4202B106F0032B2D6 /* Main.storyboard */,
