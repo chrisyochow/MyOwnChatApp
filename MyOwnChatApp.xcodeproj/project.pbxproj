@@ -12,9 +12,11 @@
 		BE20A7B6202B106F0032B2D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE20A7B4202B106F0032B2D6 /* Main.storyboard */; };
 		BE20A7B8202B106F0032B2D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE20A7B7202B106F0032B2D6 /* Assets.xcassets */; };
 		BE20A7BB202B106F0032B2D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE20A7B9202B106F0032B2D6 /* LaunchScreen.storyboard */; };
+		EBB3EE8252FF6E4EA9F291D2 /* Pods_MyOwnChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E5E69FB1C76CD33D0FBF17 /* Pods_MyOwnChatApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A8EFC908699502302C6651A6 /* Pods-MyOwnChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyOwnChatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyOwnChatApp/Pods-MyOwnChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		BE20A7AD202B106F0032B2D6 /* MyOwnChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyOwnChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE20A7B0202B106F0032B2D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE20A7B2202B106F0032B2D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		BE20A7B7202B106F0032B2D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE20A7BA202B106F0032B2D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE20A7BC202B106F0032B2D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE6D181E13E20E493EF89B3B /* Pods-MyOwnChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyOwnChatApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyOwnChatApp/Pods-MyOwnChatApp.debug.xcconfig"; sourceTree = "<group>"; };
+		F4E5E69FB1C76CD33D0FBF17 /* Pods_MyOwnChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyOwnChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBB3EE8252FF6E4EA9F291D2 /* Pods_MyOwnChatApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E2640E90C6F8DFFC655EA9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4E5E69FB1C76CD33D0FBF17 /* Pods_MyOwnChatApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BE20A7A4202B106F0032B2D6 = {
 			isa = PBXGroup;
 			children = (
 				BE20A7AF202B106F0032B2D6 /* MyOwnChatApp */,
 				BE20A7AE202B106F0032B2D6 /* Products */,
+				BE34D27937EA8E4CF20A081C /* Pods */,
+				4E2640E90C6F8DFFC655EA9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +111,15 @@
 			path = Supporting;
 			sourceTree = "<group>";
 		};
+		BE34D27937EA8E4CF20A081C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE6D181E13E20E493EF89B3B /* Pods-MyOwnChatApp.debug.xcconfig */,
+				A8EFC908699502302C6651A6 /* Pods-MyOwnChatApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +127,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE20A7BF202B106F0032B2D6 /* Build configuration list for PBXNativeTarget "MyOwnChatApp" */;
 			buildPhases = (
+				F57522B1B8355E944595D8E7 /* [CP] Check Pods Manifest.lock */,
 				BE20A7A9202B106F0032B2D6 /* Sources */,
 				BE20A7AA202B106F0032B2D6 /* Frameworks */,
 				BE20A7AB202B106F0032B2D6 /* Resources */,
+				084A5A94457263A6A368B2C3 /* [CP] Embed Pods Frameworks */,
+				90E61B641FAC27764B3563B6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -162,6 +189,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		084A5A94457263A6A368B2C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MyOwnChatApp/Pods-MyOwnChatApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyOwnChatApp/Pods-MyOwnChatApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90E61B641FAC27764B3563B6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyOwnChatApp/Pods-MyOwnChatApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F57522B1B8355E944595D8E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyOwnChatApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BE20A7A9202B106F0032B2D6 /* Sources */ = {
@@ -304,12 +385,13 @@
 		};
 		BE20A7C0202B106F0032B2D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE6D181E13E20E493EF89B3B /* Pods-MyOwnChatApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y5P88P6T5;
 				INFOPLIST_FILE = MyOwnChatApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fcc-pro.MyOwnChatApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -320,12 +402,13 @@
 		};
 		BE20A7C1202B106F0032B2D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8EFC908699502302C6651A6 /* Pods-MyOwnChatApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y5P88P6T5;
 				INFOPLIST_FILE = MyOwnChatApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fcc-pro.MyOwnChatApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
