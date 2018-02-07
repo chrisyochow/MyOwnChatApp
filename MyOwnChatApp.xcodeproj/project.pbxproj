@@ -54,14 +54,46 @@
 		BE20A7AF202B106F0032B2D6 /* MyOwnChatApp */ = {
 			isa = PBXGroup;
 			children = (
+				BE20A7C4202B10F10032B2D6 /* Model */,
+				BE20A7C3202B10EC0032B2D6 /* View */,
+				BE20A7C2202B10E30032B2D6 /* Controller */,
 				BE20A7B0202B106F0032B2D6 /* AppDelegate.swift */,
 				BE20A7B2202B106F0032B2D6 /* ViewController.swift */,
 				BE20A7B4202B106F0032B2D6 /* Main.storyboard */,
 				BE20A7B7202B106F0032B2D6 /* Assets.xcassets */,
 				BE20A7B9202B106F0032B2D6 /* LaunchScreen.storyboard */,
 				BE20A7BC202B106F0032B2D6 /* Info.plist */,
+				BE20A7C5202B10FE0032B2D6 /* Supporting */,
 			);
 			path = MyOwnChatApp;
+			sourceTree = "<group>";
+		};
+		BE20A7C2202B10E30032B2D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BE20A7C3202B10EC0032B2D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BE20A7C4202B10F10032B2D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE20A7C5202B10FE0032B2D6 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +309,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y5P88P6T5;
 				INFOPLIST_FILE = MyOwnChatApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fcc-pro.MyOwnChatApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +325,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y5P88P6T5;
 				INFOPLIST_FILE = MyOwnChatApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fcc-pro.MyOwnChatApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
