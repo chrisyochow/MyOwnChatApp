@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '5B3188429A3B79ED07CA1E63D9D5749A'
-               BlueprintName = 'Pods-MyOwnChatApp'
+               BlueprintIdentifier = '13E81F10413A992C5B300D71DA837B0A'
+               BlueprintName = 'SwiftyJSON'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods-MyOwnChatApp.framework'>
+               BuildableName = 'SwiftyJSON.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
