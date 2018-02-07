@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A4D3FE63F963E767401AE825 /* Pods_MyOwnChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4235D54CE5E48D7790F879B8 /* Pods_MyOwnChatApp.framework */; };
 		BE05DC09202B45CD00BC13A5 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE05DC08202B45CD00BC13A5 /* SWRevealViewController.m */; };
 		BE20A7B1202B106F0032B2D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE20A7B0202B106F0032B2D6 /* AppDelegate.swift */; };
 		BE20A7B6202B106F0032B2D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE20A7B4202B106F0032B2D6 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4235D54CE5E48D7790F879B8 /* Pods_MyOwnChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyOwnChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8EFC908699502302C6651A6 /* Pods-MyOwnChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyOwnChatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyOwnChatApp/Pods-MyOwnChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		BE05DC06202B45CC00BC13A5 /* MyOwnChatApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyOwnChatApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		BE05DC07202B45CD00BC13A5 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -39,12 +41,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D3FE63F963E767401AE825 /* Pods_MyOwnChatApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77A4C252E48B2FE2556ECE65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4235D54CE5E48D7790F879B8 /* Pods_MyOwnChatApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BE057E64202B489D007F5D7D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +103,7 @@
 				BE20A7AF202B106F0032B2D6 /* MyOwnChatApp */,
 				BE20A7AE202B106F0032B2D6 /* Products */,
 				BE34D27937EA8E4CF20A081C /* Pods */,
+				77A4C252E48B2FE2556ECE65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
