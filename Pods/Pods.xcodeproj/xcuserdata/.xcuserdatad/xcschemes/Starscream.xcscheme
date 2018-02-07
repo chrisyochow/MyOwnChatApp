@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '0174AD08074F3BEA5D69A3AB577DA66B'
-               BlueprintName = 'Pods-MyOwnChatApp'
+               BlueprintIdentifier = '0C315F1ED0259621F3C87CE3D6758DE1'
+               BlueprintName = 'Starscream'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods-MyOwnChatApp.framework'>
+               BuildableName = 'Starscream.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
