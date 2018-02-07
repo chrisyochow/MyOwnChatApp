@@ -14,6 +14,7 @@
 		BE20A7BB202B106F0032B2D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE20A7B9202B106F0032B2D6 /* LaunchScreen.storyboard */; };
 		BEB3427F202B4F6100247E06 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB3427E202B4F6100247E06 /* ChatVC.swift */; };
 		BEB34281202B4F7100247E06 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB34280202B4F7100247E06 /* ChannelVC.swift */; };
+		BEB34283202B581600247E06 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB34282202B581600247E06 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BE6D181E13E20E493EF89B3B /* Pods-MyOwnChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyOwnChatApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyOwnChatApp/Pods-MyOwnChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BEB3427E202B4F6100247E06 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		BEB34280202B4F7100247E06 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
+		BEB34282202B581600247E06 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,13 +45,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4E2640E90C6F8DFFC655EA9A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		BE057E64202B489D007F5D7D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +57,7 @@
 		BE057E65202B48A9007F5D7D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BEB34282202B581600247E06 /* GradientView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,7 +92,6 @@
 				BE20A7AF202B106F0032B2D6 /* MyOwnChatApp */,
 				BE20A7AE202B106F0032B2D6 /* Products */,
 				BE34D27937EA8E4CF20A081C /* Pods */,
-				4E2640E90C6F8DFFC655EA9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -272,6 +267,7 @@
 			files = (
 				BEB34281202B4F7100247E06 /* ChannelVC.swift in Sources */,
 				BEB3427F202B4F6100247E06 /* ChatVC.swift in Sources */,
+				BEB34283202B581600247E06 /* GradientView.swift in Sources */,
 				BE20A7B1202B106F0032B2D6 /* AppDelegate.swift in Sources */,
 				BE05DC09202B45CD00BC13A5 /* SWRevealViewController.m in Sources */,
 			);
@@ -422,7 +418,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "MyOwnChatApp/Supporting/MyOwnChatApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -441,7 +437,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyOwnChatApp/Supporting/MyOwnChatApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

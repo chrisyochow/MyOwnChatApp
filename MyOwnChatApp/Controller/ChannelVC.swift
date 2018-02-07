@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class ChannelVC: UIViewController {
 
     override func viewDidLoad() {
@@ -15,5 +16,5 @@ class ChannelVC: UIViewController {
 
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 50
     }
-
+    
 }
