@@ -9,4 +9,6 @@ target 'MyOwnChatApp' do
 
   # Pods for MyOwnChatApp
   pod 'Alamofire'
+  pod 'SwiftyJSON'
+  
 end
