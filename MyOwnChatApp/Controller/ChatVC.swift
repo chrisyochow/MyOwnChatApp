@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable
 class ChatVC: UIViewController {
-
+    
     @IBOutlet weak var burgerBtn: UIButton!
     
     override func viewDidLoad() {
@@ -20,5 +20,5 @@ class ChatVC: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     }
-
+    
 }
