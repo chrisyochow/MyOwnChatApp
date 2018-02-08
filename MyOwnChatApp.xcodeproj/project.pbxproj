@@ -18,6 +18,7 @@
 		BEB34283202B581600247E06 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB34282202B581600247E06 /* GradientView.swift */; };
 		BEE9D32A202C1AEA008AEA11 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9D329202C1AEA008AEA11 /* Constants.swift */; };
 		BEE9D32C202C8873008AEA11 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9D32B202C8873008AEA11 /* LoginVC.swift */; };
+		BEE9D32E202C8DDC008AEA11 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9D32D202C8DDC008AEA11 /* CreateAccountVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BEB34282202B581600247E06 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		BEE9D329202C1AEA008AEA11 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BEE9D32B202C8873008AEA11 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		BEE9D32D202C8DDC008AEA11 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				BEB3427E202B4F6100247E06 /* ChatVC.swift */,
 				BEB34280202B4F7100247E06 /* ChannelVC.swift */,
 				BEE9D32B202C8873008AEA11 /* LoginVC.swift */,
+				BEE9D32D202C8DDC008AEA11 /* CreateAccountVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			files = (
 				BEB34281202B4F7100247E06 /* ChannelVC.swift in Sources */,
 				BEB3427F202B4F6100247E06 /* ChatVC.swift in Sources */,
+				BEE9D32E202C8DDC008AEA11 /* CreateAccountVC.swift in Sources */,
 				BEE9D32C202C8873008AEA11 /* LoginVC.swift in Sources */,
 				BEB34283202B581600247E06 /* GradientView.swift in Sources */,
 				BE20A7B1202B106F0032B2D6 /* AppDelegate.swift in Sources */,
