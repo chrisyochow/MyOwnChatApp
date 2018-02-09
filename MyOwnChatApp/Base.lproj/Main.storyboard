@@ -423,6 +423,7 @@
                                         </state>
                                         <connections>
                                             <action selector="createAccountBtnPressed:" destination="ZLj-1p-03X" eventType="touchUpInside" id="IBx-UA-LOf"/>
+                                            <action selector="pickAvatarPassed:" destination="AT4-jJ-C0M" eventType="touchUpInside" id="B3Q-d3-H48"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syI-Zr-kE2">
@@ -436,6 +437,7 @@
                                         </state>
                                         <connections>
                                             <action selector="createAccountBtnPressed:" destination="ZLj-1p-03X" eventType="touchUpInside" id="CEr-cL-eAg"/>
+                                            <action selector="pickBGColorPassed:" destination="AT4-jJ-C0M" eventType="touchUpInside" id="sM8-Zs-n2J"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -451,6 +453,9 @@
                                 <state key="normal" title="Create">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="createBtnPassed:" destination="AT4-jJ-C0M" eventType="touchUpInside" id="oGx-Au-vs8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -469,6 +474,10 @@
                         <viewLayoutGuide key="safeArea" id="rg5-Zj-X8w"/>
                     </view>
                     <connections>
+                        <outlet property="emailTxt" destination="5OA-a8-Tza" id="Rtn-Pp-4Pi"/>
+                        <outlet property="passwordTxt" destination="Gry-4b-MZj" id="oeg-1m-EsR"/>
+                        <outlet property="userImg" destination="3uu-fv-lKA" id="S2h-Co-atC"/>
+                        <outlet property="usernameTxt" destination="MC0-QN-d9c" id="C9s-oW-xF7"/>
                         <segue destination="v7e-RT-9w0" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="JA4-uC-6En"/>
                     </connections>
                 </viewController>
