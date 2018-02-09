@@ -19,6 +19,7 @@
 		BEE9D32A202C1AEA008AEA11 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9D329202C1AEA008AEA11 /* Constants.swift */; };
 		BEE9D32C202C8873008AEA11 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9D32B202C8873008AEA11 /* LoginVC.swift */; };
 		BEE9D32E202C8DDC008AEA11 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9D32D202C8DDC008AEA11 /* CreateAccountVC.swift */; };
+		BEE9D331202D682B008AEA11 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9D330202D682B008AEA11 /* AuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		BEE9D329202C1AEA008AEA11 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BEE9D32B202C8873008AEA11 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BEE9D32D202C8DDC008AEA11 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
+		BEE9D330202D682B008AEA11 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				BE057E65202B48A9007F5D7D /* View */,
 				BE057E64202B489D007F5D7D /* Controller */,
 				BE057E67202B48BD007F5D7D /* Utility */,
+				BEE9D32F202D6816008AEA11 /* Services */,
 				BE20A7B0202B106F0032B2D6 /* AppDelegate.swift */,
 				BE20A7B4202B106F0032B2D6 /* Main.storyboard */,
 				BE20A7B7202B106F0032B2D6 /* Assets.xcassets */,
@@ -148,6 +151,14 @@
 				A8EFC908699502302C6651A6 /* Pods-MyOwnChatApp.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BEE9D32F202D6816008AEA11 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BEE9D330202D682B008AEA11 /* AuthService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +300,7 @@
 				BEB34281202B4F7100247E06 /* ChannelVC.swift in Sources */,
 				BEB3427F202B4F6100247E06 /* ChatVC.swift in Sources */,
 				BEE9D32E202C8DDC008AEA11 /* CreateAccountVC.swift in Sources */,
+				BEE9D331202D682B008AEA11 /* AuthService.swift in Sources */,
 				BEE9D32C202C8873008AEA11 /* LoginVC.swift in Sources */,
 				BEB34283202B581600247E06 /* GradientView.swift in Sources */,
 				BE20A7B1202B106F0032B2D6 /* AppDelegate.swift in Sources */,
