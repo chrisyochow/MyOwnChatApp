@@ -10,13 +10,26 @@ import UIKit
 
 
 class LoginVC: UIViewController {
-
+    
+    @IBOutlet weak var usernameTxt: UITextField!
+    @IBOutlet weak var passwordTxt: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func loginBtnPressed(_ sender: Any) {
+        guard let email = usernameTxt.text, usernameTxt.text != "" else { return }
+        guard let password = passwordTxt.text, passwordTxt.text != "" else { return }
+        
+        AuthService.instance.loginUser(email: email, password: password) { (success) in
+            if success {
+                print("logged in user!", AuthService.instance.authToken)
+            }
+        }
+    }
     
     @IBAction func closeBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
