@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class CreateAccountVC: UIViewController {
 
     @IBOutlet weak var usernameTxt: UITextField!
