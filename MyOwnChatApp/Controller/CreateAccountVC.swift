@@ -13,23 +13,27 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var usernameTxt: UITextField!
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
-    @IBOutlet weak var userImg: UIImageView!
+    @IBOutlet weak var avatarImg: UIImageView!
     
     
     var avatarName = "profileDefault"
     var avatarColor = "[0.5, 0.5, 0.5, 1]"
+    var bgColor: UIColor?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         if UserDataService.instance.avatarName != "" {
             avatarName = UserDataService.instance.avatarName
-            userImg.image = UIImage(named: avatarName)
+            avatarImg.image = UIImage(named: avatarName)
+            
+            if avatarName.contains("light") && bgColor == nil {
+                avatarImg.backgroundColor = UIColor.lightGray
+            }
         }
     }
     
@@ -68,13 +72,24 @@ class CreateAccountVC: UIViewController {
     }
     
     
-    @IBAction func pickAvatarPassed(_ sender: Any) {
+    @IBAction func avatarImageTapped(_ sender: Any) {
+        performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
+    }
+    
+    @IBAction func pickAvatarPressed(_ sender: Any) {
         performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
     }
     
     
-    @IBAction func pickBGColorPassed(_ sender: Any) {
+    @IBAction func chooseBgColorPressed(_ sender: Any) {
+        let r = CGFloat(arc4random_uniform(255)) / 255
+        let g = CGFloat(arc4random_uniform(255)) / 255
+        let b = CGFloat(arc4random_uniform(255)) / 255
         
+        bgColor = UIColor(red: r, green: g, blue: b, alpha: 1)
+        UIView.animate(withDuration: 0.3) {
+            self.avatarImg.backgroundColor = self.bgColor
+        }
     }
     
 }

@@ -118,7 +118,7 @@
                                 </constraints>
                                 <state key="normal" image="addChannelButton"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="3PT-0j-zV7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="3PT-0j-zV7" customClass="CircleImage" customModule="MyOwnChatApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="572" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="5La-ad-fqV"/>
@@ -188,8 +188,8 @@
                         <viewLayoutGuide key="safeArea" id="FcT-g2-8fi"/>
                     </view>
                     <connections>
+                        <outlet property="avatarImg" destination="3PT-0j-zV7" id="oft-Wh-hZG"/>
                         <outlet property="loginBtn" destination="bpw-YH-70n" id="fuu-UJ-tfw"/>
-                        <outlet property="userImg" destination="3PT-0j-zV7" id="MsJ-N2-N9E"/>
                         <segue destination="ZLj-1p-03X" kind="show" identifier="toLogin" id="Rcd-nI-iVQ"/>
                     </connections>
                 </viewController>
@@ -411,12 +411,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5pO-vF-afp">
                                 <rect key="frame" x="111.5" y="333.5" width="152" height="152"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="3uu-fv-lKA">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="3uu-fv-lKA" userLabel="Avatar Img" customClass="CircleImage" customModule="MyOwnChatApp" customModuleProvider="target">
                                         <rect key="frame" x="26" y="0.0" width="100" height="100"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="EtW-eN-7o6"/>
                                             <constraint firstAttribute="height" constant="100" id="oag-5y-viN"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="R4k-zZ-mY7" appends="YES" id="avE-Ar-J3e"/>
+                                        </connections>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8W7-vi-nPZ">
                                         <rect key="frame" x="36" y="108" width="80" height="18"/>
@@ -428,8 +432,7 @@
                                             <color key="titleColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="createAccountBtnPressed:" destination="ZLj-1p-03X" eventType="touchUpInside" id="IBx-UA-LOf"/>
-                                            <action selector="pickAvatarPassed:" destination="AT4-jJ-C0M" eventType="touchUpInside" id="B3Q-d3-H48"/>
+                                            <action selector="pickAvatarPressed:" destination="AT4-jJ-C0M" eventType="touchUpInside" id="b2b-hh-k43"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syI-Zr-kE2">
@@ -442,8 +445,7 @@
                                             <color key="titleColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="createAccountBtnPressed:" destination="ZLj-1p-03X" eventType="touchUpInside" id="CEr-cL-eAg"/>
-                                            <action selector="pickBGColorPassed:" destination="AT4-jJ-C0M" eventType="touchUpInside" id="sM8-Zs-n2J"/>
+                                            <action selector="chooseBgColorPressed:" destination="AT4-jJ-C0M" eventType="touchUpInside" id="WPE-t5-Ggg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -480,9 +482,9 @@
                         <viewLayoutGuide key="safeArea" id="rg5-Zj-X8w"/>
                     </view>
                     <connections>
+                        <outlet property="avatarImg" destination="3uu-fv-lKA" id="1dS-Hz-2sm"/>
                         <outlet property="emailTxt" destination="5OA-a8-Tza" id="Rtn-Pp-4Pi"/>
                         <outlet property="passwordTxt" destination="Gry-4b-MZj" id="oeg-1m-EsR"/>
-                        <outlet property="userImg" destination="3uu-fv-lKA" id="S2h-Co-atC"/>
                         <outlet property="usernameTxt" destination="MC0-QN-d9c" id="C9s-oW-xF7"/>
                         <segue destination="v7e-RT-9w0" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="JA4-uC-6En"/>
                         <segue destination="C2x-LO-454" kind="show" identifier="toAvatarPicker" id="31f-Or-zjz"/>
@@ -490,6 +492,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAW-Ds-lb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="v7e-RT-9w0" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="R4k-zZ-mY7">
+                    <connections>
+                        <action selector="avatarImageTapped:" destination="AT4-jJ-C0M" id="M6S-d6-QEM"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2505" y="-347"/>
         </scene>
@@ -543,7 +550,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kdg-Nn-vqw">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kdg-Nn-vqw">
                                                     <rect key="frame" x="10" y="10" width="80" height="80"/>
                                                 </imageView>
                                             </subviews>
