@@ -107,23 +107,11 @@ class AuthService {
             "avatarColor": avatarColor
         ]
     
-        let header = [
-            "Authorization":"Bearer \(AuthService.instance.authToken)",
-            "Content-Type": "application/json; charset=utf-8"
-        ]
-        
-        Alamofire.request(URL_ADD_USER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+        Alamofire.request(URL_ADD_USER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             if response.result.error == nil {
                 guard let responseData = response.data else { return }
-                if let json = try? JSON(data: responseData) {
-                    let userIdNumber = json["_id"].stringValue
-                    let name = json["name"].stringValue
-                    let email = json["email"].stringValue
-                    let avatarName = json["avatarName"].stringValue
-                    let avatarColor = json["avatarColor"].stringValue
-                    
-                    UserDataService.instance.setUserData(userIdNumber: userIdNumber, name: name, email: email, avatarName: avatarName, avatarColor: avatarColor)
-                    
+                
+                if self.setUserData(responseData: responseData) {
                     completion(true)
                 } else {
                     completion(false)
@@ -134,6 +122,67 @@ class AuthService {
                 debugPrint(response.result.error as Any)
             }
         }
-    
     }
+    
+    
+//    func findMe(completion: @escaping CompletionHandler) {
+//        let header = [
+//            "Authorization":"Bearer \(AuthService.instance.authToken)"
+//        ]
+//
+//        Alamofire.request(URL_FIND_ME, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+//            if response.result.error == nil {
+//                print("User found...")
+//                completion(true)
+//            } else {
+//                completion(false)
+//                debugPrint(response.result.error as Any)
+//            }
+//        }
+//    }
+    
+    func findUserByEmail(completion: @escaping CompletionHandler) {
+        Alamofire.request("\(URL_FIND_USER_BY_EMAIL)/\(self.userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+            if response.result.error == nil {
+                guard let responseData = response.data else { return }
+                
+                if self.setUserData(responseData: responseData) {
+                    completion(true)
+                } else {
+                    completion(false)
+                    debugPrint(response.result.error as Any)
+                }
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
+    func logoutUser() {
+        userEmail = ""
+        authToken = ""
+        isLoggedIn = false
+    }
+    
+    
+    func setUserData(responseData: Data) -> Bool {
+        var success = false
+        
+        if let json = try? JSON(data: responseData) {
+            let userIdNumber = json["_id"].stringValue
+            let name = json["name"].stringValue
+            let email = json["email"].stringValue
+            let avatarName = json["avatarName"].stringValue
+            let avatarColor = json["avatarColor"].stringValue
+            
+            UserDataService.instance.setUserData(userIdNumber: userIdNumber, name: name, email: email, avatarName: avatarName, avatarColor: avatarColor)
+            success = true
+        } else {
+            success = false
+        }
+        
+        return success
+    }
+    
 }
