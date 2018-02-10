@@ -1,5 +1,5 @@
 //
-//  RoundCornerButton.swift
+//  RoundCornerView.swift
 //  MyOwnChatApp
 //
 //  Created by Chris Chow on 10/2/2018.
@@ -9,9 +9,9 @@
 import UIKit
 
 @IBDesignable
-class RoundCornerButton: UIButton {
+class RoundCornerView: UIView {
     
-    @IBInspectable var cornerRadius: CGFloat = 5.0 {
+    @IBInspectable var cornerRadius: CGFloat = 10.0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
         }

@@ -134,6 +134,13 @@ class AuthService {
                 debugPrint(response.result.error as Any)
             }
         }
-    
     }
+    
+    
+    func logoutUser() {
+        userEmail = ""
+        authToken = ""
+        isLoggedIn = false
+    }
+    
 }

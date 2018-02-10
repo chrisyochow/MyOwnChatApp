@@ -89,17 +89,17 @@ class CreateAccountVC: UIViewController {
         
         AuthService.instance.registerUser(email: email, password: password) { (success) in
             if success {
-                print("registered user")
+                print("registered user...")
                 
                 AuthService.instance.loginUser(email: email, password: password, completion: { (success) in
                     
                     if success {
-                        print("logged in user!", AuthService.instance.authToken)
+                        print("logged in user...", AuthService.instance.authToken)
                         
                         AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: { (success) in
                             
                             if success {
-                                print("user account created")
+                                print("user account created...")
                                 print("User ID: \(UserDataService.instance.userIdNumber)")
                                 print("Name: \(UserDataService.instance.name)")
                                 print("Email: \(UserDataService.instance.email)")
