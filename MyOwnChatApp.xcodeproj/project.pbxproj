@@ -14,6 +14,7 @@
 		BE20A7B6202B106F0032B2D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE20A7B4202B106F0032B2D6 /* Main.storyboard */; };
 		BE20A7B8202B106F0032B2D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE20A7B7202B106F0032B2D6 /* Assets.xcassets */; };
 		BE20A7BB202B106F0032B2D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE20A7B9202B106F0032B2D6 /* LaunchScreen.storyboard */; };
+		BE528D9F202EC2AC00C632F3 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE528D9E202EC2AC00C632F3 /* CircleImage.swift */; };
 		BEB3427F202B4F6100247E06 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB3427E202B4F6100247E06 /* ChatVC.swift */; };
 		BEB34281202B4F7100247E06 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB34280202B4F7100247E06 /* ChannelVC.swift */; };
 		BEB34283202B581600247E06 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB34282202B581600247E06 /* GradientView.swift */; };
@@ -39,6 +40,7 @@
 		BE20A7B7202B106F0032B2D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE20A7BA202B106F0032B2D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE20A7BC202B106F0032B2D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE528D9E202EC2AC00C632F3 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		BE6D181E13E20E493EF89B3B /* Pods-MyOwnChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyOwnChatApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyOwnChatApp/Pods-MyOwnChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BEB3427E202B4F6100247E06 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		BEB34280202B4F7100247E06 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
@@ -87,9 +89,10 @@
 		BE057E65202B48A9007F5D7D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BEB9304E202E821100D50137 /* AvatarCell.swift */,
+				BE528D9E202EC2AC00C632F3 /* CircleImage.swift */,
 				BEB34282202B581600247E06 /* GradientView.swift */,
 				BE0590C0202DFDA100065F66 /* RoundCornerButton.swift */,
-				BEB9304E202E821100D50137 /* AvatarCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				BEB34281202B4F7100247E06 /* ChannelVC.swift in Sources */,
 				BEB9304D202E800D00D50137 /* AvatarPickerVC.swift in Sources */,
 				BEB3427F202B4F6100247E06 /* ChatVC.swift in Sources */,
+				BE528D9F202EC2AC00C632F3 /* CircleImage.swift in Sources */,
 				BEE9D32E202C8DDC008AEA11 /* CreateAccountVC.swift in Sources */,
 				BEE9D331202D682B008AEA11 /* AuthService.swift in Sources */,
 				BEE9D32C202C8873008AEA11 /* LoginVC.swift in Sources */,
