@@ -20,6 +20,7 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var pickAvatarBtn: UIButton!
     @IBOutlet weak var pickBgColorBtn: UIButton!
     
+    @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var avatarName = "profileDefault"
@@ -72,29 +73,32 @@ class CreateAccountVC: UIViewController {
         self.closeBtn.isUserInteractionEnabled = enableOrNot
         self.pickAvatarBtn.isUserInteractionEnabled = enableOrNot
         self.pickBgColorBtn.isUserInteractionEnabled = enableOrNot
+        self.coverView.isHidden = enableOrNot
         self.spinner.isHidden = enableOrNot
         if enableOrNot {
             self.spinner.stopAnimating()
+            self.createBtn.setTitle("Sign Up", for: .normal)
         } else {
-            spinner.startAnimating()
+            self.spinner.startAnimating()
+            self.createBtn.setTitle(" ", for: .normal)
         }
     }
     
     @IBAction func createBtnPassed(_ sender: Any) {
+        guard let name = usernameTxt.text, usernameTxt.text != "" else { return }
+        guard let email = emailTxt.text, emailTxt.text != "" else { return }
+        guard let password = passwordTxt.text, passwordTxt.text != "" else { return }
+        
         setupUserInteraction(enableOrNot: false)
-        
-        guard let name = usernameTxt.text, usernameTxt.text != "" else { setupUserInteraction(enableOrNot: true); return }
-        guard let email = emailTxt.text, emailTxt.text != "" else { setupUserInteraction(enableOrNot: true); return }
-        guard let password = passwordTxt.text, passwordTxt.text != "" else { setupUserInteraction(enableOrNot: true); return }
-        
+
         AuthService.instance.registerUser(email: email, password: password) { (success) in
             if success {
                 print("registered user...")
                 
                 AuthService.instance.loginUser(email: email, password: password, completion: { (success) in
-                    
                     if success {
-                        print("logged in user...", AuthService.instance.authToken)
+                        print("logged in user...")
+                        print("Auth Token: \(AuthService.instance.authToken)")
                         
                         AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: { (success) in
                             
@@ -107,13 +111,18 @@ class CreateAccountVC: UIViewController {
                                 print("Avatar Color: \(UserDataService.instance.avatarColor)")
                                 
                                 self.setupUserInteraction(enableOrNot: true)
-                                
                                 NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                                 self.performSegue(withIdentifier: UNWIND, sender: nil)
+                            } else {
+                                self.setupUserInteraction(enableOrNot: true)
                             }
                         })
+                    } else {
+                        self.setupUserInteraction(enableOrNot: true)
                     }
                 })
+            } else {
+                self.setupUserInteraction(enableOrNot: true)
             }
         }
     }

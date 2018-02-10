@@ -303,23 +303,42 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Lad-Z2-IJp">
+                                <rect key="frame" x="169" y="359.5" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <view hidden="YES" alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4q2-NN-OzG">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2Yo-2g-Hr8" firstAttribute="top" secondItem="Ixu-Nr-hYa" secondAttribute="top" constant="60" id="3PQ-WU-JdE"/>
                             <constraint firstItem="2Yo-2g-Hr8" firstAttribute="centerX" secondItem="p2J-Za-WIl" secondAttribute="centerX" id="Gta-1P-oVt"/>
+                            <constraint firstItem="Ixu-Nr-hYa" firstAttribute="trailing" secondItem="4q2-NN-OzG" secondAttribute="trailing" id="HgF-mg-e67"/>
                             <constraint firstItem="Ixu-Nr-hYa" firstAttribute="trailing" secondItem="70A-Xi-YRk" secondAttribute="trailing" constant="20" id="Nee-hX-Egj"/>
                             <constraint firstItem="Wrc-WP-CYb" firstAttribute="centerX" secondItem="p2J-Za-WIl" secondAttribute="centerX" id="P3h-5H-Pgq"/>
+                            <constraint firstItem="4q2-NN-OzG" firstAttribute="leading" secondItem="Ixu-Nr-hYa" secondAttribute="leading" id="cTd-6O-yCh"/>
                             <constraint firstItem="70A-Xi-YRk" firstAttribute="top" secondItem="Ixu-Nr-hYa" secondAttribute="top" constant="20" id="eCS-m1-0yl"/>
                             <constraint firstItem="Wrc-WP-CYb" firstAttribute="top" secondItem="2Yo-2g-Hr8" secondAttribute="bottom" constant="50" id="etg-5z-UN7"/>
+                            <constraint firstItem="Lad-Z2-IJp" firstAttribute="centerX" secondItem="Avc-QT-ui3" secondAttribute="centerX" id="fDf-2O-XRN"/>
                             <constraint firstItem="EAx-kL-Rcj" firstAttribute="centerX" secondItem="p2J-Za-WIl" secondAttribute="centerX" id="jA0-EO-RFK"/>
                             <constraint firstItem="EAx-kL-Rcj" firstAttribute="top" secondItem="Wrc-WP-CYb" secondAttribute="bottom" constant="100" id="omG-z8-cHb"/>
+                            <constraint firstItem="Lad-Z2-IJp" firstAttribute="centerY" secondItem="Avc-QT-ui3" secondAttribute="centerY" id="p1W-1J-Dwt"/>
+                            <constraint firstItem="Ixu-Nr-hYa" firstAttribute="bottom" secondItem="4q2-NN-OzG" secondAttribute="bottom" id="w2h-kD-DbC"/>
+                            <constraint firstItem="4q2-NN-OzG" firstAttribute="top" secondItem="Ixu-Nr-hYa" secondAttribute="top" id="z9T-Sr-yN3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ixu-Nr-hYa"/>
                     </view>
                     <connections>
+                        <outlet property="closeBtn" destination="70A-Xi-YRk" id="3fW-ri-uxU"/>
+                        <outlet property="coverView" destination="4q2-NN-OzG" id="csg-0L-0Bo"/>
                         <outlet property="emailTxt" destination="QLD-rs-L9B" id="VhH-AT-so2"/>
+                        <outlet property="loginBtn" destination="Avc-QT-ui3" id="TMA-ic-0ZT"/>
                         <outlet property="passwordTxt" destination="07d-M0-Lr5" id="OXw-uz-aK3"/>
+                        <outlet property="signUpBtn" destination="Br6-FT-D7v" id="mif-NO-jnP"/>
+                        <outlet property="spinner" destination="Lad-Z2-IJp" id="xDD-ZU-Fsv"/>
                         <segue destination="AT4-jJ-C0M" kind="show" identifier="toCreateAccount" id="gIL-kL-Zaz"/>
                     </connections>
                 </viewController>
@@ -458,38 +477,47 @@
                                     <constraint firstAttribute="width" constant="250" id="Yyv-Da-prh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
-                                <state key="normal" title="Create">
+                                <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="createBtnPassed:" destination="AT4-jJ-C0M" eventType="touchUpInside" id="oGx-Au-vs8"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Bsv-mj-nFH">
-                                <rect key="frame" x="169" y="215" width="37" height="37"/>
-                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Bsv-mj-nFH">
+                                <rect key="frame" x="169" y="599" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
+                            <view hidden="YES" alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="08T-J0-hj4">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="08T-J0-hj4" firstAttribute="top" secondItem="rg5-Zj-X8w" secondAttribute="top" id="EhP-JP-YL3"/>
                             <constraint firstItem="026-9d-8jf" firstAttribute="top" secondItem="XIh-SG-fqM" secondAttribute="bottom" constant="50" id="EyK-3c-Fx9"/>
                             <constraint firstItem="rg5-Zj-X8w" firstAttribute="bottom" secondItem="yKO-Ge-oLl" secondAttribute="bottom" constant="30" id="J4S-90-PcR"/>
+                            <constraint firstItem="rg5-Zj-X8w" firstAttribute="trailing" secondItem="08T-J0-hj4" secondAttribute="trailing" id="L9h-2c-Ox3"/>
                             <constraint firstItem="6rp-6S-U0e" firstAttribute="top" secondItem="rg5-Zj-X8w" secondAttribute="top" constant="20" id="Ogl-fh-0kZ"/>
+                            <constraint firstItem="rg5-Zj-X8w" firstAttribute="bottom" secondItem="08T-J0-hj4" secondAttribute="bottom" id="Qgt-z8-dt2"/>
                             <constraint firstItem="yKO-Ge-oLl" firstAttribute="centerX" secondItem="rR2-r4-2gq" secondAttribute="centerX" id="TpZ-r4-cI9"/>
+                            <constraint firstItem="Bsv-mj-nFH" firstAttribute="centerY" secondItem="yKO-Ge-oLl" secondAttribute="centerY" id="Z3C-BI-OxD"/>
                             <constraint firstItem="5pO-vF-afp" firstAttribute="top" secondItem="026-9d-8jf" secondAttribute="bottom" constant="40" id="dGj-5e-ynM"/>
                             <constraint firstItem="026-9d-8jf" firstAttribute="centerX" secondItem="rR2-r4-2gq" secondAttribute="centerX" id="g3q-Nf-FBN"/>
                             <constraint firstItem="XIh-SG-fqM" firstAttribute="top" secondItem="rg5-Zj-X8w" secondAttribute="top" constant="60" id="hdi-L3-Vj8"/>
+                            <constraint firstItem="Bsv-mj-nFH" firstAttribute="centerX" secondItem="yKO-Ge-oLl" secondAttribute="centerX" id="hf9-6R-Bes"/>
                             <constraint firstItem="5pO-vF-afp" firstAttribute="centerX" secondItem="rR2-r4-2gq" secondAttribute="centerX" id="kcg-4A-B3d"/>
-                            <constraint firstItem="Bsv-mj-nFH" firstAttribute="centerX" secondItem="rR2-r4-2gq" secondAttribute="centerX" id="kdB-fr-6IB"/>
                             <constraint firstItem="XIh-SG-fqM" firstAttribute="centerX" secondItem="rR2-r4-2gq" secondAttribute="centerX" id="lje-NL-D4u"/>
                             <constraint firstItem="rg5-Zj-X8w" firstAttribute="trailing" secondItem="6rp-6S-U0e" secondAttribute="trailing" constant="20" id="m4s-BP-kJG"/>
-                            <constraint firstItem="Bsv-mj-nFH" firstAttribute="centerY" secondItem="rR2-r4-2gq" secondAttribute="centerY" constant="-100" id="s9n-9w-in1"/>
+                            <constraint firstItem="08T-J0-hj4" firstAttribute="leading" secondItem="rg5-Zj-X8w" secondAttribute="leading" id="mKs-nV-ngz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rg5-Zj-X8w"/>
                     </view>
                     <connections>
                         <outlet property="avatarImg" destination="3uu-fv-lKA" id="1dS-Hz-2sm"/>
                         <outlet property="closeBtn" destination="6rp-6S-U0e" id="aV4-AW-vZ4"/>
+                        <outlet property="coverView" destination="08T-J0-hj4" id="uht-Qs-2Wf"/>
                         <outlet property="createBtn" destination="yKO-Ge-oLl" id="QeC-nd-mof"/>
                         <outlet property="emailTxt" destination="5OA-a8-Tza" id="Rtn-Pp-4Pi"/>
                         <outlet property="passwordTxt" destination="Gry-4b-MZj" id="oeg-1m-EsR"/>
@@ -509,7 +537,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2505" y="-347"/>
+            <point key="canvasLocation" x="2504.8000000000002" y="-347.67616191904051"/>
         </scene>
         <!--Avatar PickerVC-->
         <scene sceneID="EGH-N4-X2p">
