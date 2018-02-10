@@ -76,7 +76,12 @@ class LoginVC: UIViewController {
                 AuthService.instance.findUserByEmail(completion: { (success) in
                     if success {
                         print("User found...")
-                        
+                        print("User ID: \(UserDataService.instance.userIdNumber)")
+                        print("Name: \(UserDataService.instance.name)")
+                        print("Email: \(UserDataService.instance.email)")
+                        print("Avatar Name: \(UserDataService.instance.avatarName)")
+                        print("Avatar Color: \(UserDataService.instance.avatarColor)")
+
                         NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                         self.dismiss(animated: true, completion: nil)
                     }
