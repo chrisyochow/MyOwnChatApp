@@ -13,11 +13,12 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 
 //URL
 let BASE_URL = "https://mychitchatapp.herokuapp.com/v1/"
-let URL_REGISTER = "\(BASE_URL)account/register"
-let URL_LOGIN = "\(BASE_URL)account/login"
-let URL_ADD_USER = "\(BASE_URL)user/add"
-let URL_FIND_USER_BY_EMAIL = "\(BASE_URL)user/byEmail"
-let URL_FIND_ME = "\(BASE_URL)account/me"
+let URL_REGISTER = "\(BASE_URL)account/register/"
+let URL_LOGIN = "\(BASE_URL)account/login/"
+let URL_ADD_USER = "\(BASE_URL)user/add/"
+let URL_FIND_USER_BY_EMAIL = "\(BASE_URL)user/byEmail/"
+let URL_FIND_ME = "\(BASE_URL)account/me/"
+let URL_FIND_ALL_CHANNELS = "\(BASE_URL)channel/"
 
 //Colors
 let lightPurplePlaceholder = #colorLiteral(red: 0.3266413212, green: 0.4215201139, blue: 0.7752227187, alpha: 0.5)

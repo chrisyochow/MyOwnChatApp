@@ -110,20 +110,15 @@ class CreateAccountVC: UIViewController {
                                 print("Avatar Name: \(UserDataService.instance.avatarName)")
                                 print("Avatar Color: \(UserDataService.instance.avatarColor)")
                                 
-                                self.setupUserInteraction(enableOrNot: true)
                                 NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                                 self.performSegue(withIdentifier: UNWIND, sender: nil)
-                            } else {
-                                self.setupUserInteraction(enableOrNot: true)
                             }
                         })
-                    } else {
-                        self.setupUserInteraction(enableOrNot: true)
                     }
                 })
-            } else {
-                self.setupUserInteraction(enableOrNot: true)
             }
+            
+            self.setupUserInteraction(enableOrNot: true)
         }
     }
     

@@ -27,6 +27,7 @@ class ChannelVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         setupUserInfo()
+        getChannels()
     }
     
     
@@ -46,6 +47,22 @@ class ChannelVC: UIViewController {
             avatarImg.backgroundColor = UIColor.clear
         }
     }
+    
+    
+    func getChannels() {
+        MessageService.instance.findAllChannels { (success) in
+            if success {
+                print("Get channels successfully")
+                for item in MessageService.instance.channels {
+                    print("id: \(item._id), name: \(item.name), description: \(item.description)")
+                }
+                
+            } else {
+                print("unsuccessful")
+            }
+        }
+    }
+    
     
     @IBAction func loginBtnPressed(_ sender: Any) {
         if AuthService.instance.isLoggedIn, UserDataService.instance.name != "" {
