@@ -325,7 +325,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TYk-lR-hAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1893.5999999999999" y="-347.67616191904051"/>
+            <point key="canvasLocation" x="1770" y="-347"/>
         </scene>
         <!--Create AccountVC-->
         <scene sceneID="wqr-mY-q3c">
@@ -491,7 +491,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAW-Ds-lb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="v7e-RT-9w0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2772" y="-347"/>
+            <point key="canvasLocation" x="2505" y="-347"/>
         </scene>
         <!--Avatar PickerVC-->
         <scene sceneID="EGH-N4-X2p">
@@ -543,7 +543,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kdg-Nn-vqw">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kdg-Nn-vqw">
                                                     <rect key="frame" x="10" y="10" width="80" height="80"/>
                                                 </imageView>
                                             </subviews>
@@ -581,7 +581,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYT-ny-m0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3656.8000000000002" y="-348.57571214392806"/>
+            <point key="canvasLocation" x="3238" y="-347"/>
         </scene>
     </scenes>
     <resources>

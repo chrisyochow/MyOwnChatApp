@@ -22,12 +22,6 @@ class ChannelVC: UIViewController {
     }
     
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        
-    }
-    
     @IBAction func loginBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: TO_LOGIN, sender: nil)
     }
