@@ -11,7 +11,9 @@ import UIKit
 class ChannelVC: UIViewController {
     
     @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var userImg: UIImageView!
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,12 @@ class ChannelVC: UIViewController {
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 50
     }
     
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        
+    }
     
     @IBAction func loginBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: TO_LOGIN, sender: nil)

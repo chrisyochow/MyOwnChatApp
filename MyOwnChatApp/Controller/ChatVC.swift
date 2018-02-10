@@ -12,6 +12,7 @@ class ChatVC: UIViewController {
     
     @IBOutlet weak var burgerBtn: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

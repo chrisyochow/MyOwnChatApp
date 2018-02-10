@@ -17,6 +17,7 @@
 		BEB3427F202B4F6100247E06 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB3427E202B4F6100247E06 /* ChatVC.swift */; };
 		BEB34281202B4F7100247E06 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB34280202B4F7100247E06 /* ChannelVC.swift */; };
 		BEB34283202B581600247E06 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB34282202B581600247E06 /* GradientView.swift */; };
+		BEB9304B202E6EB800D50137 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB9304A202E6EB800D50137 /* UserDataService.swift */; };
 		BEE9D32A202C1AEA008AEA11 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9D329202C1AEA008AEA11 /* Constants.swift */; };
 		BEE9D32C202C8873008AEA11 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9D32B202C8873008AEA11 /* LoginVC.swift */; };
 		BEE9D32E202C8DDC008AEA11 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9D32D202C8DDC008AEA11 /* CreateAccountVC.swift */; };
@@ -40,6 +41,7 @@
 		BEB3427E202B4F6100247E06 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		BEB34280202B4F7100247E06 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		BEB34282202B581600247E06 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		BEB9304A202E6EB800D50137 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		BEE9D329202C1AEA008AEA11 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BEE9D32B202C8873008AEA11 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BEE9D32D202C8DDC008AEA11 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				BEE9D330202D682B008AEA11 /* AuthService.swift */,
+				BEB9304A202E6EB800D50137 /* UserDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				BE20A7B1202B106F0032B2D6 /* AppDelegate.swift in Sources */,
 				BE05DC09202B45CD00BC13A5 /* SWRevealViewController.m in Sources */,
 				BEE9D32A202C1AEA008AEA11 /* Constants.swift in Sources */,
+				BEB9304B202E6EB800D50137 /* UserDataService.swift in Sources */,
 				BE0590C1202DFDA100065F66 /* RoundCornerButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
