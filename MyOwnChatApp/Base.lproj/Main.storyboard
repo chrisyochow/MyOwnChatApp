@@ -465,6 +465,10 @@
                                     <action selector="createBtnPassed:" destination="AT4-jJ-C0M" eventType="touchUpInside" id="oGx-Au-vs8"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Bsv-mj-nFH">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -476,15 +480,22 @@
                             <constraint firstItem="026-9d-8jf" firstAttribute="centerX" secondItem="rR2-r4-2gq" secondAttribute="centerX" id="g3q-Nf-FBN"/>
                             <constraint firstItem="XIh-SG-fqM" firstAttribute="top" secondItem="rg5-Zj-X8w" secondAttribute="top" constant="60" id="hdi-L3-Vj8"/>
                             <constraint firstItem="5pO-vF-afp" firstAttribute="centerX" secondItem="rR2-r4-2gq" secondAttribute="centerX" id="kcg-4A-B3d"/>
+                            <constraint firstItem="Bsv-mj-nFH" firstAttribute="centerX" secondItem="rR2-r4-2gq" secondAttribute="centerX" id="kdB-fr-6IB"/>
                             <constraint firstItem="XIh-SG-fqM" firstAttribute="centerX" secondItem="rR2-r4-2gq" secondAttribute="centerX" id="lje-NL-D4u"/>
                             <constraint firstItem="rg5-Zj-X8w" firstAttribute="trailing" secondItem="6rp-6S-U0e" secondAttribute="trailing" constant="20" id="m4s-BP-kJG"/>
+                            <constraint firstItem="Bsv-mj-nFH" firstAttribute="centerY" secondItem="rR2-r4-2gq" secondAttribute="centerY" constant="-100" id="s9n-9w-in1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rg5-Zj-X8w"/>
                     </view>
                     <connections>
                         <outlet property="avatarImg" destination="3uu-fv-lKA" id="1dS-Hz-2sm"/>
+                        <outlet property="closeBtn" destination="6rp-6S-U0e" id="aV4-AW-vZ4"/>
+                        <outlet property="createBtn" destination="yKO-Ge-oLl" id="QeC-nd-mof"/>
                         <outlet property="emailTxt" destination="5OA-a8-Tza" id="Rtn-Pp-4Pi"/>
                         <outlet property="passwordTxt" destination="Gry-4b-MZj" id="oeg-1m-EsR"/>
+                        <outlet property="pickAvatarBtn" destination="8W7-vi-nPZ" id="pE4-6a-cvk"/>
+                        <outlet property="pickBgColorBtn" destination="syI-Zr-kE2" id="YFv-YN-mrv"/>
+                        <outlet property="spinner" destination="Bsv-mj-nFH" id="dnF-Ft-jdR"/>
                         <outlet property="usernameTxt" destination="MC0-QN-d9c" id="C9s-oW-xF7"/>
                         <segue destination="v7e-RT-9w0" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="JA4-uC-6En"/>
                         <segue destination="C2x-LO-454" kind="show" identifier="toAvatarPicker" id="31f-Or-zjz"/>

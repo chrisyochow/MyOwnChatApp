@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class LoginVC: UIViewController {
     
     @IBOutlet weak var emailTxt: UITextField!
@@ -17,6 +16,8 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupView()
     }
     
     
@@ -40,4 +41,11 @@ class LoginVC: UIViewController {
     @IBAction func createAccountBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: TO_CREATE_ACCOUNT, sender: nil)
     }
+    
+    
+    func setupView() {
+         emailTxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor: lightPurplePlaceholder])
+        passwordTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedStringKey.foregroundColor: lightPurplePlaceholder])
+    }
+    
 }
