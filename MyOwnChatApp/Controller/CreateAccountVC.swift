@@ -26,6 +26,14 @@ class CreateAccountVC: UIViewController {
     }
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDataService.instance.avatarName != "" {
+            avatarName = UserDataService.instance.avatarName
+            userImg.image = UIImage(named: avatarName)
+        }
+    }
+    
+    
     @IBAction func closeBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: UNWIND, sender: nil)
     }
@@ -61,7 +69,7 @@ class CreateAccountVC: UIViewController {
     
     
     @IBAction func pickAvatarPassed(_ sender: Any) {
-        
+        performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
     }
     
     
