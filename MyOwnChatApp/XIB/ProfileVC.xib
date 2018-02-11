@@ -39,6 +39,17 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgz-yj-GsZ" customClass="RoundCornerView" customModule="MyOwnChatApp" customModuleProvider="target">
                     <rect key="frame" x="20" y="173" width="335" height="320"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6t-Xy-0XO">
+                            <rect key="frame" x="292" y="15" width="28" height="28"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="28" id="NsJ-D0-oxV"/>
+                                <constraint firstAttribute="width" constant="28" id="sN2-iY-7rF"/>
+                            </constraints>
+                            <state key="normal" image="closeButton"/>
+                            <connections>
+                                <action selector="closeBtnPressed:" destination="-1" eventType="touchUpInside" id="uCk-4a-3Qs"/>
+                            </connections>
+                        </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="F5y-y4-PUj">
                             <rect key="frame" x="102.5" y="30" width="130.5" height="209"/>
                             <subviews>
@@ -82,17 +93,6 @@
                             </state>
                             <connections>
                                 <action selector="logoutBtnPressed:" destination="-1" eventType="touchUpInside" id="eiQ-8t-sb3"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6t-Xy-0XO">
-                            <rect key="frame" x="292" y="15" width="28" height="28"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="28" id="NsJ-D0-oxV"/>
-                                <constraint firstAttribute="width" constant="28" id="sN2-iY-7rF"/>
-                            </constraints>
-                            <state key="normal" image="closeButton"/>
-                            <connections>
-                                <action selector="closeBtnPressed:" destination="-1" eventType="touchUpInside" id="uCk-4a-3Qs"/>
                             </connections>
                         </button>
                     </subviews>

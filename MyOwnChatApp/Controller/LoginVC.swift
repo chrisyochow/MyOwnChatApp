@@ -81,9 +81,11 @@ class LoginVC: UIViewController {
                         print("Email: \(UserDataService.instance.email)")
                         print("Avatar Name: \(UserDataService.instance.avatarName)")
                         print("Avatar Color: \(UserDataService.instance.avatarColor)")
-
+                        
                         NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                         self.dismiss(animated: true, completion: nil)
+                    } else {
+                        print("Cannot find user...")
                     }
                     
                     self.setupUserInteraction(enableOrNot: true)

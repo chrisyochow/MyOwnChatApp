@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ChannelVC: UIViewController {
+class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var avatarImg: CircleImage!
+    @IBOutlet weak var tableView: UITableView!
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
     
@@ -19,28 +20,70 @@ class ChannelVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 50
         
+        setupUserInfo()
+
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelListUpdated(_:)), name: NOTIF_CHANNEL_LIST_UPDATED, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.reloadChannelList(_:)), name: NOTIF_NEW_CHANNEL_ADDED, object: nil)
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
-        setupUserInfo()
-        getChannels()
+        tableView.reloadData()
+    }
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.channels.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "channelCell", for: indexPath) as? ChannelCell {
+            cell.configureCell(channel: MessageService.instance.channels[indexPath.row])
+            return cell
+        }
+        return ChannelCell()
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
     
     
     @objc func userDataDidChange(_ notif: Notification) {
         setupUserInfo()
+        tableView.reloadData()
     }
     
     
-    func setupUserInfo() {
+    @objc func channelListUpdated(_ notif: Notification) {
+        tableView.reloadData()
+    }
+    
+    
+    @objc func reloadChannelList(_ notif: Notification) {
+        getChannels()
+    }
+    
+    
+   func setupUserInfo() {
         if AuthService.instance.isLoggedIn {
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             avatarImg.image = UIImage(named: UserDataService.instance.avatarName)
             avatarImg.backgroundColor = UserDataService.instance.returnUIColor(component: UserDataService.instance.avatarColor)
+            getChannels()
         } else {
             loginBtn.setTitle("Login", for: .normal)
             avatarImg.image = UIImage(named: "menuProfileIcon")
@@ -50,16 +93,31 @@ class ChannelVC: UIViewController {
     
     
     func getChannels() {
-        MessageService.instance.findAllChannels { (success) in
-            if success {
-                print("Get channels successfully")
-                for item in MessageService.instance.channels {
-                    print("id: \(item._id), name: \(item.name), description: \(item.description)")
+        if AuthService.instance.isLoggedIn {
+            MessageService.instance.findAllChannels { (success) in
+                if success {
+                    print("Get channels successfully")
+                    for item in MessageService.instance.channels {
+                        print("id: \(item._id), name: \(item.name), description: \(item.description)")
+                    }
+                    NotificationCenter.default.post(name: NOTIF_CHANNEL_LIST_UPDATED, object: nil)
+                } else {
+                    print("unsuccessful")
                 }
-                
-            } else {
-                print("unsuccessful")
             }
+        } else {
+            print("Won't get channels...")
+        }
+    }
+
+    
+    @IBAction func addChannelBtnPressed(_ sender: Any) {
+        if AuthService.instance.isLoggedIn, UserDataService.instance.name != "" {
+            let addChannel = AddChannelVC()
+            addChannel.modalPresentationStyle = .custom
+            present(addChannel, animated: true, completion: nil)
+        } else {
+            performSegue(withIdentifier: TO_LOGIN, sender: nil)
         }
     }
     

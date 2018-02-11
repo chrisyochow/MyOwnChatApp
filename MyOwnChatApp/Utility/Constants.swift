@@ -19,14 +19,18 @@ let URL_ADD_USER = "\(BASE_URL)user/add/"
 let URL_FIND_USER_BY_EMAIL = "\(BASE_URL)user/byEmail/"
 let URL_FIND_ME = "\(BASE_URL)account/me/"
 let URL_FIND_ALL_CHANNELS = "\(BASE_URL)channel/"
+let URL_ADD_CHANNEL = "\(BASE_URL)channel/add/"
 
 //Colors
 let lightPurplePlaceholder = #colorLiteral(red: 0.3266413212, green: 0.4215201139, blue: 0.7752227187, alpha: 0.5)
 
 //Notification
 let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
+let NOTIF_CHANNEL_LIST_UPDATED = Notification.Name("notifChannelListUpdated")
+let NOTIF_NEW_CHANNEL_ADDED = Notification.Name("notifNewChannelAdded")
 
 //Segues
+let TO_SWREVEAL = "toSWReveal"
 let TO_LOGIN = "toLogin"
 let TO_CREATE_ACCOUNT = "toCreateAccount"
 let TO_AVATAR_PICKER = "toAvatarPicker"
