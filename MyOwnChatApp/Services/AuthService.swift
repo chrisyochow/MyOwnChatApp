@@ -112,14 +112,17 @@ class AuthService {
                 guard let responseData = response.data else { return }
                 
                 if self.setUserData(responseData: responseData) {
+                    print("user created...")
                     completion(true)
                 } else {
+                    print("user cannot created...")
                     completion(false)
                     debugPrint(response.result.error as Any)
                 }
             } else {
                 completion(false)
                 debugPrint(response.result.error as Any)
+                print(response)
             }
         }
     }

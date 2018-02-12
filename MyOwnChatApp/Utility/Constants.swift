@@ -12,14 +12,14 @@ import Foundation
 typealias CompletionHandler = (_ Success: Bool) -> ()
 
 //URL
-let BASE_URL = "https://mychitchatapp.herokuapp.com/v1/"
-let URL_REGISTER = "\(BASE_URL)account/register/"
-let URL_LOGIN = "\(BASE_URL)account/login/"
-let URL_ADD_USER = "\(BASE_URL)user/add/"
-let URL_FIND_USER_BY_EMAIL = "\(BASE_URL)user/byEmail/"
-let URL_FIND_ME = "\(BASE_URL)account/me/"
-let URL_FIND_ALL_CHANNELS = "\(BASE_URL)channel/"
-let URL_ADD_CHANNEL = "\(BASE_URL)channel/add/"
+let URL_BASE = "https://mychitchatapp.herokuapp.com/v1/"
+let URL_REGISTER = "\(URL_BASE)account/register/"
+let URL_LOGIN = "\(URL_BASE)account/login/"
+let URL_ADD_USER = "\(URL_BASE)user/add/"
+let URL_FIND_USER_BY_EMAIL = "\(URL_BASE)user/byEmail/"
+let URL_FIND_ME = "\(URL_BASE)account/me/"
+let URL_FIND_ALL_CHANNELS = "\(URL_BASE)channel/"
+let URL_ADD_CHANNEL = "\(URL_BASE)channel/add/"
 
 //Colors
 let lightPurplePlaceholder = #colorLiteral(red: 0.3266413212, green: 0.4215201139, blue: 0.7752227187, alpha: 0.5)
@@ -49,4 +49,3 @@ let BEARER_HEADER = [
     "Authorization":"Bearer \(AuthService.instance.authToken)",
     "Content-Type": "application/json; charset=utf-8"
 ]
-
