@@ -37,6 +37,7 @@ class SocketService: NSObject {
         completion(true)
     }
     
+    
     func getChannel(completion: @escaping CompletionHandler) {
         let socket: SocketIOClient = socketManager.defaultSocket
         socket.connect()
@@ -50,6 +51,14 @@ class SocketService: NSObject {
             MessageService.instance.channels.append(newChannel)
             completion(true)
         }
+    }
+    
+    
+    func addMessage(messageBody: String, userId: String, channelId: String, userName: String, avatarName: String, avatarColor: String, completion: @escaping CompletionHandler) {
+        let socket: SocketIOClient = socketManager.defaultSocket
+        socket.connect()
+        socket.emit(NEW_MESSAGE, messageBody, userId, channelId, userName, avatarName, avatarColor)
+        completion(true)
     }
     
 }

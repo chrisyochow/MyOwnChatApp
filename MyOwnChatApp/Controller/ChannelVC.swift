@@ -23,6 +23,8 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.estimatedRowHeight = 30
+        
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 50
         
         setupUserInfo()
@@ -34,7 +36,7 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
 
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelListUpdated(_:)), name: NOTIF_CHANNEL_LIST_UPDATED, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelListLoaded(_:)), name: NOTIF_CHANNEL_LIST_LOADED, object: nil)
     }
     
     
@@ -63,7 +65,10 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        MessageService.instance.channelSeleted(row: indexPath.row)
         
+        NotificationCenter.default.post(name: NOTIF_CHANNEL_SELECTED, object: nil)
+        self.revealViewController().revealToggle(animated: true)
     }
     
     
@@ -73,7 +78,7 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    @objc func channelListUpdated(_ notif: Notification) {
+    @objc func channelListLoaded(_ notif: Notification) {
         tableView.reloadData()
     }
     
@@ -95,11 +100,11 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func getChannels() {
         MessageService.instance.findAllChannels { (success) in
             if success {
-                print("Get channels successfully")
+                print("Get channels successfully...")
                 for item in MessageService.instance.channels {
                     print("id: \(item._id), name: \(item.name), description: \(item.description)")
                 }
-                NotificationCenter.default.post(name: NOTIF_CHANNEL_LIST_UPDATED, object: nil)
+                NotificationCenter.default.post(name: NOTIF_CHANNEL_LIST_LOADED, object: nil)
             } else {
                 print("cannot get channels")
             }

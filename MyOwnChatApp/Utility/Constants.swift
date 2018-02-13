@@ -20,13 +20,15 @@ let URL_FIND_USER_BY_EMAIL = "\(URL_BASE)user/byEmail/"
 let URL_FIND_ME = "\(URL_BASE)account/me/"
 let URL_FIND_ALL_CHANNELS = "\(URL_BASE)channel/"
 let URL_ADD_CHANNEL = "\(URL_BASE)channel/add/"
+let URL_FIND_ALL_MESSAGE_FOR_CHANNEL = "\(URL_BASE)message/byChannel/"
 
 //Colors
 let lightPurplePlaceholder = #colorLiteral(red: 0.3266413212, green: 0.4215201139, blue: 0.7752227187, alpha: 0.5)
 
 //Notification
 let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
-let NOTIF_CHANNEL_LIST_UPDATED = Notification.Name("notifChannelListUpdated")
+let NOTIF_CHANNEL_LIST_LOADED = Notification.Name("notifChannelListUpdated")
+let NOTIF_CHANNEL_SELECTED = Notification.Name("notifChannelSeleted")
 
 //Segues
 let TO_SWREVEAL = "toSWReveal"
@@ -56,3 +58,4 @@ let LOGIN_FAILURE = "Email or password invalid, please check your credentials"
 //Socket
 let NEW_CHANNEL = "newChannel"
 let CHANNEL_CREATED = "channelCreated"
+let NEW_MESSAGE = "newMessage"
