@@ -80,14 +80,20 @@ class AuthService {
         Alamofire.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             if response.result.error == nil {
                 guard let responseData = response.data else { return }
-                if let json = try? JSON(data: responseData) {
-                    self.userEmail = json["user"].stringValue
-                    self.authToken = json["token"].stringValue
-                    self.isLoggedIn = true
-                    completion(true)
-                } else {
+
+                do {
+                    let json = try JSON(data: responseData)
+                    if json["token"].stringValue != "" {
+                        self.userEmail = json["user"].stringValue
+                        self.authToken = json["token"].stringValue
+                        self.isLoggedIn = true
+                        completion(true)
+                    } else {
+                        completion(false)
+                    }
+                } catch let error {
                     completion(false)
-                    debugPrint(response.result.error as Any)
+                    debugPrint(error)
                 }
             } else {
                 completion(false)
@@ -112,10 +118,8 @@ class AuthService {
                 guard let responseData = response.data else { return }
                 
                 if self.setUserData(responseData: responseData) {
-                    print("user created...")
                     completion(true)
                 } else {
-                    print("user cannot created...")
                     completion(false)
                     debugPrint(response.result.error as Any)
                 }
@@ -170,9 +174,8 @@ class AuthService {
     
     
     func setUserData(responseData: Data) -> Bool {
-        var success = false
-        
-        if let json = try? JSON(data: responseData) {
+        do {
+            let json = try JSON(data: responseData)
             let userIdNumber = json["_id"].stringValue
             let name = json["name"].stringValue
             let email = json["email"].stringValue
@@ -180,12 +183,12 @@ class AuthService {
             let avatarColor = json["avatarColor"].stringValue
             
             UserDataService.instance.setUserData(userIdNumber: userIdNumber, name: name, email: email, avatarName: avatarName, avatarColor: avatarColor)
-            success = true
-        } else {
-            success = false
+            
+            return true
+        } catch let error {
+            debugPrint(error)
+            return false
         }
-        
-        return success
     }
     
 }

@@ -27,7 +27,6 @@ let lightPurplePlaceholder = #colorLiteral(red: 0.3266413212, green: 0.421520113
 //Notification
 let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
 let NOTIF_CHANNEL_LIST_UPDATED = Notification.Name("notifChannelListUpdated")
-let NOTIF_NEW_CHANNEL_ADDED = Notification.Name("notifNewChannelAdded")
 
 //Segues
 let TO_SWREVEAL = "toSWReveal"
@@ -49,3 +48,11 @@ let BEARER_HEADER = [
     "Authorization":"Bearer \(AuthService.instance.authToken)",
     "Content-Type": "application/json; charset=utf-8"
 ]
+
+//API Response
+let ADD_CHANNEL_SUCCESS = "Channel saved successfully"
+let LOGIN_FAILURE = "Email or password invalid, please check your credentials"
+
+//Socket
+let NEW_CHANNEL = "newChannel"
+let CHANNEL_CREATED = "channelCreated"

@@ -33,15 +33,14 @@ class SocketService: NSObject {
     func addChannel(channelName: String, channelDescription: String, completion: @escaping CompletionHandler) {
         let socket: SocketIOClient = socketManager.defaultSocket
         socket.connect()
-        socket.emit("newChannel", channelName, channelDescription)
+        socket.emit(NEW_CHANNEL, channelName, channelDescription)
         completion(true)
-        
     }
     
     func getChannel(completion: @escaping CompletionHandler) {
         let socket: SocketIOClient = socketManager.defaultSocket
         socket.connect()
-        socket.on("channelCreated") { (dataArray, ack) in
+        socket.on(CHANNEL_CREATED) { (dataArray, ack) in
             guard let channelName = dataArray[0] as? String else { return }
             guard let channelDescription = dataArray[1] as? String else { return }
             guard let channelId = dataArray[2] as? String else { return }

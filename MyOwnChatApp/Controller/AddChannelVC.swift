@@ -81,18 +81,6 @@ class AddChannelVC: UIViewController {
             
             self.setupUserInteraction(enableOrNot: true)
         }
-//        MessageService.instance.addChannel(channelName: channelName, channelDescription: channelDescription) { (success) in
-//            if success {
-//                print("a new channel is added...")
-//
-////                NotificationCenter.default.post(name: NOTIF_NEW_CHANNEL_ADDED, object: nil)
-//                self.dismiss(animated: true, completion: nil)
-//            } else {
-//                print("cannot add a channel...")
-//            }
-//
-//            self.setupUserInteraction(enableOrNot: true)
-//        }
     }
     
     

@@ -35,7 +35,6 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelListUpdated(_:)), name: NOTIF_CHANNEL_LIST_UPDATED, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.reloadChannelList(_:)), name: NOTIF_NEW_CHANNEL_ADDED, object: nil)
     }
     
     
@@ -79,12 +78,7 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    @objc func reloadChannelList(_ notif: Notification) {
-        getChannels()
-    }
-    
-    
-   func setupUserInfo() {
+    func setupUserInfo() {
         if AuthService.instance.isLoggedIn {
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             avatarImg.image = UIImage(named: UserDataService.instance.avatarName)
@@ -99,20 +93,16 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     func getChannels() {
-        if AuthService.instance.isLoggedIn {
-            MessageService.instance.findAllChannels { (success) in
-                if success {
-                    print("Get channels successfully")
-                    for item in MessageService.instance.channels {
-                        print("id: \(item._id), name: \(item.name), description: \(item.description)")
-                    }
-                    NotificationCenter.default.post(name: NOTIF_CHANNEL_LIST_UPDATED, object: nil)
-                } else {
-                    print("unsuccessful")
+        MessageService.instance.findAllChannels { (success) in
+            if success {
+                print("Get channels successfully")
+                for item in MessageService.instance.channels {
+                    print("id: \(item._id), name: \(item.name), description: \(item.description)")
                 }
+                NotificationCenter.default.post(name: NOTIF_CHANNEL_LIST_UPDATED, object: nil)
+            } else {
+                print("cannot get channels")
             }
-        } else {
-            print("Won't get channels...")
         }
     }
 

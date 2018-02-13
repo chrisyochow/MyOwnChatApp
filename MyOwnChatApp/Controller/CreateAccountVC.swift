@@ -88,6 +88,7 @@ class CreateAccountVC: UIViewController {
         guard let name = usernameTxt.text, usernameTxt.text != "" else { return }
         guard let email = emailTxt.text, emailTxt.text != "" else { return }
         guard let password = passwordTxt.text, passwordTxt.text != "" else { return }
+        if UserDataService.instance.avatarName == "" { return }
         
         setupUserInteraction(enableOrNot: false)
 
@@ -101,7 +102,6 @@ class CreateAccountVC: UIViewController {
                         print("Auth Token: \(AuthService.instance.authToken)")
                         
                         AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: { (success) in
-                            
                             if success {
                                 print("user account created...")
                                 print("User ID: \(UserDataService.instance.userIdNumber)")
@@ -112,13 +112,17 @@ class CreateAccountVC: UIViewController {
                                 
                                 NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                                 self.performSegue(withIdentifier: UNWIND, sender: nil)
+                            } else {
+                                print("cannot create user...")
                             }
                         })
+                    } else {
+                        print("cannot login user...")
                     }
                 })
+            } else {
+                print("cannot register user...")
             }
-            
-            self.setupUserInteraction(enableOrNot: true)
         }
     }
     
@@ -143,7 +147,10 @@ class CreateAccountVC: UIViewController {
     
     
     @IBAction func closeBtnPressed(_ sender: Any) {
+        AuthService.instance.logoutUser()
         UserDataService.instance.setUserData(userIdNumber: "", name: "", email: "", avatarName: "", avatarColor: "")
+        MessageService.instance.clearChannels()
+        
         performSegue(withIdentifier: UNWIND, sender: nil)
     }
     

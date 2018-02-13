@@ -15,6 +15,7 @@ class MessageService {
     static let instance = MessageService()
     
     var channels = [Channel]()
+    var channelMessages = [Message]()
     
     
     func findAllChannels(completion: @escaping CompletionHandler) {
@@ -27,6 +28,7 @@ class MessageService {
                     completion(true)
                 } catch let error {
                     debugPrint(error)
+                    completion(false)
                 }
             } else {
                 completion(false)
@@ -37,6 +39,22 @@ class MessageService {
     
     
     func findAllMessageForChannel(channelId: String, completion: @escaping CompletionHandler) {
+        Alamofire.request("\(URL_FIND_ALL_CHANNELS)\(channelId)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+            if response.result.error == nil {
+                guard let responseData = response.data else { return }
+                
+//                do  {
+//                    self.channelMessages = try JSONDecoder().decode([Message].self, from: responseData)
+//                    completion(true)
+//                } catch let error {
+//                    debugPrint(error)
+//                    completion(false)
+//                }
+            } else {
+                debugPrint(response.result.error as Any)
+                completion(false)
+            }
+        }
         completion(true)
     }
     
@@ -51,17 +69,21 @@ class MessageService {
             if response.result.error == nil {
                 guard let responseData = response.data else { return }
                 
-                if let json = try? JSON(data: responseData) {
+                do {
+                    let json = try JSON(data: responseData)
                     let responseMsg = json["message"].stringValue
-                    print(responseMsg)
-                    completion(true)
-                } else {
+                    if responseMsg == ADD_CHANNEL_SUCCESS {
+                        completion(true)
+                    } else {
+                       completion(false)
+                    }
+                } catch let error {
+                    debugPrint(error)
                     completion(false)
-                    debugPrint(response.result.error as Any)
                 }
             } else {
-                completion(false)
                 debugPrint(response.result.error as Any)
+                completion(false)
             }
         }
     }

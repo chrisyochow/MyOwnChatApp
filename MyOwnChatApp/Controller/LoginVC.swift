@@ -88,8 +88,10 @@ class LoginVC: UIViewController {
                         print("Cannot find user...")
                     }
                     
-                    self.setupUserInteraction(enableOrNot: true)
+//                    self.setupUserInteraction(enableOrNot: true)
                 })
+            } else {
+                print("login failure...")
             }
                 
             self.setupUserInteraction(enableOrNot: true)
