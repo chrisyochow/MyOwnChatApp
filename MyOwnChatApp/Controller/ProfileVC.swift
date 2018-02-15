@@ -32,15 +32,6 @@ class ProfileVC: UIViewController {
         
         let closeTouch = UITapGestureRecognizer(target: self, action: #selector(ProfileVC.closeTap(_:)))
         bgView.addGestureRecognizer(closeTouch)
-        
-        print("Auth Token: \(AuthService.instance.authToken)")
-        print("Auth Email: \(AuthService.instance.userEmail)")
-        print("Is logged in: \(AuthService.instance.isLoggedIn)")
-        print("Name: \(UserDataService.instance.name)")
-        print("Email: \(UserDataService.instance.email)")
-        print("User ID: \(UserDataService.instance.userIdNumber)")
-        print("Avatar Name: \(UserDataService.instance.avatarName)")
-        print("Avatar Color: \(UserDataService.instance.avatarColor)")
     }
     
     
@@ -52,11 +43,13 @@ class ProfileVC: UIViewController {
     @IBAction func logoutBtnPressed(_ sender: Any) {
         AuthService.instance.logoutUser()
         UserDataService.instance.setUserData(userIdNumber: "", name: "", email: "", avatarName: "", avatarColor: "")
+        MessageService.instance.clearChannels()
+        MessageService.instance.clearMessages()
         
         NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         dismiss(animated: true, completion: nil)
         
-        print("logged out user...")
+        print("ChitChat: logged out...")
     }
     
     

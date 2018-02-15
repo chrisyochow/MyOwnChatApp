@@ -14,9 +14,9 @@ class LoginVC: UIViewController {
     @IBOutlet weak var passwordTxt: UITextField!
     
     @IBOutlet weak var closeBtn: UIButton!
-    @IBOutlet weak var loginBtn: RoundCornerButton!
     @IBOutlet weak var signUpBtn: UIButton!
-    
+    @IBOutlet weak var loginBtn: RoundCornerButton!
+
     @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
@@ -31,8 +31,8 @@ class LoginVC: UIViewController {
     func setupView() {
         setupUserInteraction(enableOrNot: true)
         
-        emailTxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor: lightPurplePlaceholder])
-        passwordTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedStringKey.foregroundColor: lightPurplePlaceholder])
+        emailTxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor: COLOR_LIGHT_PURPLE])
+        passwordTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedStringKey.foregroundColor: COLOR_LIGHT_PURPLE])
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(LoginVC.handleTap))
         view.addGestureRecognizer(tap)
@@ -70,24 +70,19 @@ class LoginVC: UIViewController {
         
         AuthService.instance.loginUser(email: email, password: password) { (success) in
             if success {
-                print("logged in user...")
-                print("Auth Token: \(AuthService.instance.authToken)")
-                
                 AuthService.instance.findUserByEmail(completion: { (success) in
                     if success {
-                        print("User found...")
-                        print("User ID: \(UserDataService.instance.userIdNumber)")
-                        print("Name: \(UserDataService.instance.name)")
-                        print("Email: \(UserDataService.instance.email)")
-                        print("Avatar Name: \(UserDataService.instance.avatarName)")
-                        print("Avatar Color: \(UserDataService.instance.avatarColor)")
+                        print("ChitChat: logged in as '\(UserDataService.instance.name)'...")
+                        print("ChitChat: AuthToken = \(AuthService.instance.authToken)")
 
                         NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                         self.dismiss(animated: true, completion: nil)
+                    } else {
+                        print("ChitChat: cannot find user...")
                     }
-                    
-                    self.setupUserInteraction(enableOrNot: true)
                 })
+            } else {
+                print("ChitChat: cannot login...")
             }
                 
             self.setupUserInteraction(enableOrNot: true)
