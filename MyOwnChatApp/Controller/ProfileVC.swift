@@ -44,11 +44,12 @@ class ProfileVC: UIViewController {
         AuthService.instance.logoutUser()
         UserDataService.instance.setUserData(userIdNumber: "", name: "", email: "", avatarName: "", avatarColor: "")
         MessageService.instance.clearChannels()
+        MessageService.instance.clearMessages()
         
         NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         dismiss(animated: true, completion: nil)
         
-        print("logged out user...")
+        print("ChitChat: logged out...")
     }
     
     

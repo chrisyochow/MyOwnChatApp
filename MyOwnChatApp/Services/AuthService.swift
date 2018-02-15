@@ -29,7 +29,7 @@ class AuthService {
     
     var authToken: String {
         get {
-            return defaults.value(forKey: TOKEN_KEY) as! String
+            return (defaults.value(forKey: TOKEN_KEY) as? String) ?? ""
         }
         
         set {
@@ -40,7 +40,7 @@ class AuthService {
    
     var userEmail: String {
         get {
-            return defaults.value(forKey: USER_EMAIL) as! String
+            return (defaults.value(forKey: USER_EMAIL) as? String)! ?? ""
         }
         
         set {
@@ -149,7 +149,12 @@ class AuthService {
 //    }
     
     func findUserByEmail(completion: @escaping CompletionHandler) {
-        Alamofire.request("\(URL_FIND_USER_BY_EMAIL)\(self.userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+        let bearerHeader = [
+            "Authorization":"Bearer \(self.authToken)",
+            "Content-Type": "application/json; charset=utf-8"
+        ]
+        
+        Alamofire.request("\(URL_FIND_USER_BY_EMAIL)\(self.userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: bearerHeader).responseJSON { (response) in
             if response.result.error == nil {
                 guard let responseData = response.data else { return }
                 
@@ -165,6 +170,7 @@ class AuthService {
             }
         }
     }
+    
     
     func logoutUser() {
         userEmail = ""

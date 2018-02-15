@@ -14,9 +14,9 @@ class MessageService {
     
     static let instance = MessageService()
     
-    var channels = [Channel]()
+    public private(set) var channels = [Channel]()
     public private(set) var selectedChannel: Channel?
-    var channelMessages = [Message]()
+    public private(set) var channelMessages = [Message]()
     
     
     func findAllChannels(completion: @escaping CompletionHandler) {
@@ -88,13 +88,38 @@ class MessageService {
     }
     
     
-    func channelSeleted(row: Int) {
+    func channelSeleted(row: Int, completion: @escaping CompletionHandler) {
         selectedChannel = channels[row]
+        
+        if let channelId = selectedChannel?._id {
+            findAllMessageForChannel(channelId: channelId) { (success) in
+                if success {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+            }
+        }
+    }
+    
+    
+    func appendChannel(newChannel: Channel) {
+        channels.append(newChannel)
+    }
+    
+    
+    func appendMessage(newMessage: Message) {
+        channelMessages.append(newMessage)
     }
     
     
     func clearChannels() {
         channels.removeAll()
+        selectedChannel = Channel(_id: "", description: "", name: "", __v: 0)
     }
+    
+    func clearMessages() {
+        channelMessages.removeAll()
+     }
     
 }

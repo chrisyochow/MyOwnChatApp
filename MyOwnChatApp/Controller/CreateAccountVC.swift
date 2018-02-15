@@ -50,9 +50,9 @@ class CreateAccountVC: UIViewController {
     func setupView() {
         setupUserInteraction(enableOrNot: true)
         
-        usernameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedStringKey.foregroundColor: lightPurplePlaceholder])
-        emailTxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor: lightPurplePlaceholder])
-        passwordTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedStringKey.foregroundColor: lightPurplePlaceholder])
+        usernameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedStringKey.foregroundColor: COLOR_LIGHT_PURPLE])
+        emailTxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor: COLOR_LIGHT_PURPLE])
+        passwordTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedStringKey.foregroundColor: COLOR_LIGHT_PURPLE])
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountVC.handleTap))
         view.addGestureRecognizer(tap)
@@ -94,34 +94,28 @@ class CreateAccountVC: UIViewController {
 
         AuthService.instance.registerUser(email: email, password: password) { (success) in
             if success {
-                print("registered user...")
+                print("ChitChat: registered user as '\(name)'...")
                 
                 AuthService.instance.loginUser(email: email, password: password, completion: { (success) in
                     if success {
-                        print("logged in user...")
-                        print("Auth Token: \(AuthService.instance.authToken)")
+                        print("ChitChat: logged in as '\(name)'...")
                         
                         AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: { (success) in
                             if success {
-                                print("user account created...")
-                                print("User ID: \(UserDataService.instance.userIdNumber)")
-                                print("Name: \(UserDataService.instance.name)")
-                                print("Email: \(UserDataService.instance.email)")
-                                print("Avatar Name: \(UserDataService.instance.avatarName)")
-                                print("Avatar Color: \(UserDataService.instance.avatarColor)")
-                                
+                                print("ChitChat: user account '\(name)' created...")
+
                                 NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                                 self.performSegue(withIdentifier: UNWIND, sender: nil)
                             } else {
-                                print("cannot create user...")
+                                print("ChitChat: cannot create user '\(name)'...")
                             }
                         })
                     } else {
-                        print("cannot login user...")
+                        print("ChitChat: cannot login as '\(name)'...")
                     }
                 })
             } else {
-                print("cannot register user...")
+                print("ChitChat: cannot register user as '\(name)'...")
             }
         }
     }

@@ -11,19 +11,19 @@ import UIKit
 @IBDesignable
 class GradientView: UIView {
     
-    @IBInspectable var firstColor: UIColor = #colorLiteral(red: 0.3631127477, green: 0.4045833051, blue: 0.8775706887, alpha: 1) {
+    @IBInspectable var firstColor: UIColor = COLOR_DARK_BLUE{
         didSet {
             self.setNeedsLayout()
         }
     }
     
     
-    @IBInspectable var secondColor: UIColor = #colorLiteral(red: 0.04512443393, green: 0.8661890626, blue: 1, alpha: 1) {
+    @IBInspectable var secondColor: UIColor = COLOR_ICE {
         didSet {
             self.setNeedsLayout()
         }
     }
-    
+
     
     override func layoutSubviews() {
         let gradientLayer = CAGradientLayer()

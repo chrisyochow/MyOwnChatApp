@@ -50,24 +50,24 @@
                                 <action selector="closeBtnPressed:" destination="-1" eventType="touchUpInside" id="uCk-4a-3Qs"/>
                             </connections>
                         </button>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="F5y-y4-PUj">
-                            <rect key="frame" x="102.5" y="30" width="130.5" height="209"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="F5y-y4-PUj">
+                            <rect key="frame" x="113" y="30" width="109" height="209.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ot9-rc-eSg">
-                                    <rect key="frame" x="0.0" y="0.0" width="130.5" height="33"/>
-                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
-                                    <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="109" height="27.5"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                    <color key="textColor" red="0.23357483740000001" green="0.27813130619999998" blue="0.5961669087" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="b9J-d6-6gE" customClass="CircleImage" customModule="MyOwnChatApp" customModuleProvider="target">
-                                    <rect key="frame" x="15.5" y="46" width="100" height="100"/>
+                                    <rect key="frame" x="4.5" y="43.5" width="100" height="100"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="100" id="7kZ-9z-QxP"/>
                                         <constraint firstAttribute="width" constant="100" id="GHz-qb-0fs"/>
                                     </constraints>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bcd-W2-Buz">
-                                    <rect key="frame" x="41" y="159" width="49" height="50"/>
+                                    <rect key="frame" x="30" y="159.5" width="49" height="50"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oE-1g-XkP">
                                             <rect key="frame" x="0.0" y="0.0" width="49" height="25"/>
@@ -89,7 +89,7 @@
                             <rect key="frame" x="135" y="260" width="65" height="40"/>
                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                             <state key="normal" title="Logout">
-                                <color key="titleColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.23357483740000001" green="0.27813130619999998" blue="0.5961669087" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
                             <connections>
                                 <action selector="logoutBtnPressed:" destination="-1" eventType="touchUpInside" id="eiQ-8t-sb3"/>

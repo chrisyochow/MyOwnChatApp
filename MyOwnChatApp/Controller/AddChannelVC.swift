@@ -31,8 +31,8 @@ class AddChannelVC: UIViewController {
     func setupView() {
         setupUserInteraction(enableOrNot: true)
         
-        channelNameTxt.attributedPlaceholder = NSAttributedString(string: "channel name", attributes: [NSAttributedStringKey.foregroundColor: lightPurplePlaceholder])
-        channelDescriptionTxt.attributedPlaceholder = NSAttributedString(string: "description", attributes: [NSAttributedStringKey.foregroundColor: lightPurplePlaceholder])
+        channelNameTxt.attributedPlaceholder = NSAttributedString(string: "channel name", attributes: [NSAttributedStringKey.foregroundColor: COLOR_LIGHT_PURPLE])
+        channelDescriptionTxt.attributedPlaceholder = NSAttributedString(string: "description", attributes: [NSAttributedStringKey.foregroundColor: COLOR_LIGHT_PURPLE])
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(AddChannelVC.handleTap))
         bgView.addGestureRecognizer(tap)
