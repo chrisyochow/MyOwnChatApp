@@ -17,11 +17,11 @@ let URL_BASE = "https://mychitchatapp.herokuapp.com/v1/"
 let URL_REGISTER = "\(URL_BASE)account/register/"
 let URL_LOGIN = "\(URL_BASE)account/login/"
 let URL_ADD_USER = "\(URL_BASE)user/add/"
+let URL_ADD_CHANNEL = "\(URL_BASE)channel/add/"
 let URL_FIND_USER_BY_EMAIL = "\(URL_BASE)user/byEmail/"
 let URL_FIND_ME = "\(URL_BASE)account/me/"
 let URL_FIND_ALL_CHANNELS = "\(URL_BASE)channel/"
-let URL_ADD_CHANNEL = "\(URL_BASE)channel/add/"
-let URL_FIND_ALL_MESSAGE_FOR_CHANNEL = "\(URL_BASE)message/byChannel/"
+let URL_FIND_ALL_MESSAGES_FOR_SELECTED_CHANNEL = "\(URL_BASE)message/byChannel/"
 
 
 //Colors
@@ -33,6 +33,7 @@ let COLOR_ICE = #colorLiteral(red: 0.4513868093, green: 0.9930960536, blue: 1, a
 //Notification
 let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
 let NOTIF_CHANNELS_LOADED = Notification.Name("notifChannelsLoaded")
+let NOTIF_CHANNEL_MESSAGES_LOADED = Notification.Name("notifChannelMessagesLoaded")
 let NOTIF_CHANNEL_SELECTED = Notification.Name("notifChannelSeleted")
 
 

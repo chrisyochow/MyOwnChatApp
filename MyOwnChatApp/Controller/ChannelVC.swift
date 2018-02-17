@@ -40,6 +40,8 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 self.tableView.reloadData()
             }
         }
+        
+        print("ChitChat: ChannelVC loaded...")
     }
     
     
@@ -78,11 +80,8 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        MessageService.instance.channelSeleted(row: indexPath.row) { (success) in
-            if success {
-                NotificationCenter.default.post(name: NOTIF_CHANNEL_SELECTED, object: nil)
-            }
-        }
+        MessageService.instance.channelSeleted(row: indexPath.row)
+        NotificationCenter.default.post(name: NOTIF_CHANNEL_SELECTED, object: nil)
         
         self.revealViewController().revealToggle(animated: true)
     }
