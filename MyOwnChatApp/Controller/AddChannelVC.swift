@@ -34,12 +34,12 @@ class AddChannelVC: UIViewController {
         channelNameTxt.attributedPlaceholder = NSAttributedString(string: "channel name", attributes: [NSAttributedStringKey.foregroundColor: COLOR_LIGHT_PURPLE])
         channelDescriptionTxt.attributedPlaceholder = NSAttributedString(string: "description", attributes: [NSAttributedStringKey.foregroundColor: COLOR_LIGHT_PURPLE])
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(AddChannelVC.handleTap))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(AddChannelVC.handleTap(_:)))
         bgView.addGestureRecognizer(tap)
     }
     
     
-    @objc func handleTap() {
+    @objc func handleTap(_ recognizer: UITapGestureRecognizer) {
         if channelNameTxt.isEditing || channelDescriptionTxt.isEditing {
             view.endEditing(true)
         } else {

@@ -39,8 +39,8 @@ class MessageService {
     }
     
     
-    func findAllMessageForChannel(channelId: String, completion: @escaping CompletionHandler) {
-        Alamofire.request("\(URL_FIND_ALL_MESSAGE_FOR_CHANNEL)\(channelId)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+    func findAllMessagesForSelecgtedChannel(channelId: String, completion: @escaping CompletionHandler) {
+        Alamofire.request("\(URL_FIND_ALL_MESSAGES_FOR_SELECTED_CHANNEL)\(channelId)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             if response.result.error == nil {
                 guard let responseData = response.data else { return }
                 do  {
@@ -88,18 +88,8 @@ class MessageService {
     }
     
     
-    func channelSeleted(row: Int, completion: @escaping CompletionHandler) {
+    func channelSeleted(row: Int) {
         selectedChannel = channels[row]
-        
-        if let channelId = selectedChannel?._id {
-            findAllMessageForChannel(channelId: channelId) { (success) in
-                if success {
-                    completion(true)
-                } else {
-                    completion(false)
-                }
-            }
-        }
     }
     
     
